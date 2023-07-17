@@ -9,7 +9,7 @@
             sidebar
         </div>
         <div class="container mx-auto w-3/5 ">
-            <div @mouseenter="" @mouseleave="" class="relative bg-white rounded rounded-lg mb-5 shadow shadow-md hover:shadow-lg hover:bg-yellow-200 hover:cursor-pointer p-5"
+            <div  class="relative bg-white rounded rounded-lg mb-5 shadow shadow-md hover:shadow-lg hover:bg-yellow-200 hover:cursor-pointer p-5"
                 v-for="post in posts" :key="post.id">
                 <div>
                     <h2 class="text-xl text-gray-900 font-semibold">{{ post.title }}</h2>
@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-const readMoreTest = ref('false')
+
 defineProps({
     posts: Object
 })
