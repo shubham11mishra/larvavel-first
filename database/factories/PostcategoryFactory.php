@@ -17,7 +17,8 @@ class PostcategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->sentence(2),
+            'slug' => fake()->slug(2),
         ];
     }
 }

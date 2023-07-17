@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\postcategory;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,6 +14,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(postcategory::class);
+            $table->string('title');
+            $table->text('extract');
+            $table->longText('body');
+            $table->string('slug');
             $table->timestamps();
         });
     }

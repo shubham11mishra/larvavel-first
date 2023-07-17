@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use Inertia\Inertia;
 use App\Http\Requests\StorepostRequest;
 use App\Http\Requests\UpdatepostRequest;
+use App\Models\postcategory;
 
 class PostController extends Controller
 {
@@ -13,7 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+
+        return Inertia::render('Posts', [
+            'posts' => post::with('postcategory')->get(),
+            'categoty' => postcategory::all()
+        ]);
     }
 
     /**
