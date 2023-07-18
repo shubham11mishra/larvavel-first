@@ -44,7 +44,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/posts', [PostController::class,'index'])->name('posts.all');
+Route::get('/posts', [PostController::class, 'index'])->name('posts.all');
 
+Route::post('/test', function () {
+    return redirect()->back()->with('toast', [
+        'title' => 'hi there2',
+        'type' => 'danger'
+    ]);
+});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

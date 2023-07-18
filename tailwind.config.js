@@ -9,7 +9,9 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.vue",
     ],
-
+    daisyui: {
+		themes: ["light"]
+	},
     theme: {
         screens: {
             sm: "480px",

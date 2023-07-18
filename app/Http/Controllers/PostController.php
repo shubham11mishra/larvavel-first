@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Requests\StorepostRequest;
 use App\Http\Requests\UpdatepostRequest;
 use App\Models\postcategory;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -15,9 +16,44 @@ class PostController extends Controller
      */
     public function index()
     {
-
+        // return  post::with('postcategory', 'user')->paginate(10)->through(
+        //     function ($post) {
+        //         return [
+        //             'id' => $post->id,
+        //             'title' => $post->title,
+        //             'body' => $post->body,
+        //             'created_at' => $post->created_at,
+        //             'category' => [
+        //                 'id' => $post->postcategory->id,
+        //                 'title' => $post->postcategory->title
+        //             ],
+        //             'user' => [
+        //                 'id' => $post->user->id,
+        //                 'name' => $post->user->name
+        //             ]
+        //         ];
+        //     }
+        // );
         return Inertia::render('Posts', [
-            'posts' => post::with('postcategory')->get(),
+
+            'posts' => post::with('postcategory', 'user')->paginate(15)->through(
+                function ($post) {
+                    return [
+                        'id' => $post->id,
+                        'title' => $post->title,
+                        'body' => $post->body,
+                        'created_at' => $post->created_at,
+                        'category' => [
+                            'id' => $post->postcategory->id,
+                            'title' => $post->postcategory->title
+                        ],
+                        'user' => [
+                            'id' => $post->user->id,
+                            'name' => $post->user->name
+                        ]
+                    ];
+                }
+            ),
             'categoty' => postcategory::all()
         ]);
     }
