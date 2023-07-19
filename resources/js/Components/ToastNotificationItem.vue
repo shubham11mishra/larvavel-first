@@ -29,6 +29,7 @@ defineProps({
   }
 })
 const emit = defineEmits(['remove'])
+
 onMounted(() => {
   setTimeout(() => {
     emit('remove');

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\post;
+use App\Models\postcategory;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -50,6 +53,18 @@ Route::post('/test', function () {
     return redirect()->back()->with('toast', [
         'title' => 'hi there2',
         'type' => 'danger'
+    ]);
+});
+
+Route::get('/orm', function () {
+    ddd( [
+        
+        '2' => post::where('title', 'like', '%a%')
+            ->orderBy('title')
+            ->take(10)
+            ->get(),
+        'single column' => User::where('name','like','%a%')->orderBy('id','desc')->pluck('email','name')->get(),
+        'join' => User::leftJoin('posts', 'users.id', '=', 'posts.user_id')->get(),
     ]);
 });
 

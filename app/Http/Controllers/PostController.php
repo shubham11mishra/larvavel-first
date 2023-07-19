@@ -8,53 +8,44 @@ use App\Http\Requests\StorepostRequest;
 use App\Http\Requests\UpdatepostRequest;
 use App\Models\postcategory;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // return  post::with('postcategory', 'user')->paginate(10)->through(
-        //     function ($post) {
-        //         return [
-        //             'id' => $post->id,
-        //             'title' => $post->title,
-        //             'body' => $post->body,
-        //             'created_at' => $post->created_at,
-        //             'category' => [
-        //                 'id' => $post->postcategory->id,
-        //                 'title' => $post->postcategory->title
-        //             ],
-        //             'user' => [
-        //                 'id' => $post->user->id,
-        //                 'name' => $post->user->name
-        //             ]
-        //         ];
-        //     }
-        // );
+
         return Inertia::render('Posts', [
 
-            'posts' => post::with('postcategory', 'user')->paginate(15)->through(
-                function ($post) {
-                    return [
-                        'id' => $post->id,
-                        'title' => $post->title,
-                        'body' => $post->body,
-                        'created_at' => $post->created_at,
-                        'category' => [
-                            'id' => $post->postcategory->id,
-                            'title' => $post->postcategory->title
-                        ],
-                        'user' => [
-                            'id' => $post->user->id,
-                            'name' => $post->user->name
-                        ]
-                    ];
-                }
-            ),
-            'categoty' => postcategory::all()
+            'posts' => post::query()
+                ->when($request->input('search'), function ($query, $search) {
+                    $query->where('title', 'like', "%{$search}%");
+                })
+                ->with('postcategory', 'user')->paginate(15)
+                ->withQueryString()
+                ->through(
+                    function ($post) {
+                        return [
+                            'id' => $post->id,
+                            'title' => $post->title,
+                            'body' => $post->body,
+                            'created_at' => $post->created_at,
+                            'category' => [
+                                'id' => $post->postcategory->id,
+                                'title' => $post->postcategory->title
+                            ],
+                            'user' => [
+                                'id' => $post->user->id,
+                                'name' => $post->user->name
+                            ]
+                        ];
+                    }
+                ),
+            'categoty' => postcategory::all(),
+            'filter' => $request->only(['search'])
         ]);
     }
 
