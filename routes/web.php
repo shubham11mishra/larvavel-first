@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\media;
 use App\Models\post;
 use App\Models\postcategory;
 use App\Models\User;
@@ -57,15 +58,42 @@ Route::post('/test', function () {
 });
 
 Route::get('/orm', function () {
-    ddd( [
-        
+    dump([
         '2' => post::where('title', 'like', '%a%')
             ->orderBy('title')
             ->take(10)
             ->get(),
-        'single column' => User::where('name','like','%a%')->orderBy('id','desc')->pluck('email','name')->get(),
-        'join' => User::leftJoin('posts', 'users.id', '=', 'posts.user_id')->get(),
+
     ]);
 });
+
+Route::get('/fileupload', function () {
+
+    return Inertia::render('FileUpload');
+});
+
+Route::get('/media', function () {
+    return Inertia::render('IndexMedia');
+})->middleware(['auth', 'verified'])->name('media.index');
+
+Route::post('/media', function () {
+    request()->validate([
+        'file' => ['file', 'max:512000']
+    ]);
+    $file = request()->file('file');
+    $media =  media::create([
+        'name' => $file->getClientOriginalName(),
+        'file_name' => $file->getClientOriginalName(),
+        'mime_type' => $file->getMimeType(),
+        'size' => $file->getSize(),
+        'author_id' => auth()->id()
+    ]);
+    $dir = "media/{$media->created_at->format('Y/m/d')}/{$media->id}";
+    $file->storeAs($dir, $media->file_name, 'public');
+    return [
+        'id' => $media->id,
+        'preview_url' => url("storage/{$dir}/{$media->file_name}")
+    ];
+})->name('media.store');
 
 require __DIR__ . '/auth.php';

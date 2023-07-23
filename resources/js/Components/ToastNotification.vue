@@ -24,7 +24,6 @@ defineProps({
 })
 
 onMounted(() => {
-  console.log(toast.items);
 })
 // const items = ref([
 //   { 'id': Symbol(), 'title': 'this is title', 'type': 'danger' },

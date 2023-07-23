@@ -44,7 +44,7 @@ class PostController extends Controller
                         ];
                     }
                 ),
-            'categoty' => postcategory::all(),
+            // 'categoty' => postcategory::all(),
             'filter' => $request->only(['search'])
         ]);
     }
