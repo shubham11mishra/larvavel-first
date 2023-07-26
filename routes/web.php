@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Models\media;
@@ -27,6 +28,11 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
+
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+
+
 Route::get('/secondlayout', function () {
     return Inertia::render('Secondlayout', [
         'canLogin' => Route::has('login'),
