@@ -5,27 +5,24 @@
         <title>Home</title>
         <meta name="description" content="Home page">
     </Head>
-    <div class="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full">
-        <div class="section-bg">
-            <div class="w-full flex justify-between px-4">
-                <!-- website Logo -->
+    <div class="w-full min-h-screen bg-fixed bg-center bg-no-repeat bg-cover bg-homeBg dark:bg-homeTwoBg-dark md:pb-16">
+        <!-- <div class="section-bg">
+            <div class="flex justify-between w-full px-4">
                 <a href="/">
                     <img class="h-[26px] lg:h-[32px]" src="" alt="logo" />
                 </a>
                 <div class="flex items-center">
-                    <!-- dark and light mode toggle -->
                     <button id="theme-toggle" type="button" class="dark-light-btn">
-                        <i id="theme-toggle-dark-icon" class="fa-solid text-xl fa-moon hidden"></i>
-                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-xl hidden"></i>
+                        <i id="theme-toggle-dark-icon" class="hidden text-xl fa-solid fa-moon"></i>
+                        <i id="theme-toggle-light-icon" class="hidden text-xl fa-solid fa-sun"></i>
                     </button>
-                    <!-- mobile toggle button -->
                     <button id="menu-toggle" type="button" class="menu-toggle-btn">
-                        <i id="menu-toggle-open-icon" class="fa-solid fa-bars text-xl "></i>
-                        <i id="menu-toggle-close-icon" class="fa-solid fa-xmark text-xl hidden  "></i>
+                        <i id="menu-toggle-open-icon" class="text-xl fa-solid fa-bars "></i>
+                        <i id="menu-toggle-close-icon" class="hidden text-xl fa-solid fa-xmark "></i>
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- mobile menu start -->
         <nav id="navbar" class="hidden lg:hidden">
@@ -65,7 +62,7 @@
         </nav>
         <!-- mobile menu end -->
 
-        <div class="container mx-auto grid grid-cols-12 md:gap-10 justify-between lg:mt-[220px]">
+        <div class="container mx-auto grid grid-cols-12 md:gap-10 justify-between lg:mt-[200px]">
             <!-- sidber personal info -->
 
             <HomeSidebar />
@@ -77,23 +74,23 @@
                     <nav class="hidden lg:block">
                         <ul class="flex">
                             <li> <a class="menu-item" href="./aboutOne.html">
-                                    <span class="text-xl mb-1">
+                                    <span class="mb-1 text-xl">
                                         <i class="fa-regular fa-user"></i>
                                     </span> About </a></li>
                             <li> <a class="menu-item" href="./resumeOne.html">
-                                    <span class="text-xl mb-1">
+                                    <span class="mb-1 text-xl">
                                         <i class="fa-regular fa-file-lines"></i>
                                     </span> Resume </a></li>
                             <li> <a class="menu-active" href="./portfiloOne.html">
-                                    <span class="text-xl mb-1">
+                                    <span class="mb-1 text-xl">
                                         <i class="fas fa-briefcase"></i>
                                     </span> Works </a></li>
                             <li><a class="menu-item" href="./blogOne.html">
-                                    <span class="text-xl mb-1">
+                                    <span class="mb-1 text-xl">
                                         <i class="fa-brands fa-blogger"></i>
                                     </span> Blogs </a></li>
                             <li> <a class="menu-item" href="./contactOne.html">
-                                    <span class="text-xl mb-1">
+                                    <span class="mb-1 text-xl">
                                         <i class="fa-solid fa-address-book"></i>
                                     </span> Contact </a></li>
                         </ul>
@@ -110,16 +107,16 @@
                             <!-- fillter group buttons -->
                             <ul
                                 class="button-group isotop-menu-wrapper mt-[30px] flex w-full justify-start md:justify-end flex-wrap font-medium">
-                                <li class="fillter-btn mr-4 md:mx-4 is-checked" data-filter="*">All</li>
-                                <li class="fillter-btn mr-4 md:mx-4" data-filter=".dev">Video</li>
-                                <li class="fillter-btn mr-4 md:mx-4" data-filter=".plugin"> Web Design</li>
-                                <li class="fillter-btn mr-4 md:mx-4" data-filter=".branding"> Logo</li>
-                                <li class="fillter-btn mr-4 md:mx-4" data-filter=".custom">Graphic Design</li>
+                                <li class="mr-4 fillter-btn md:mx-4 is-checked" data-filter="*">All</li>
+                                <li class="mr-4 fillter-btn md:mx-4" data-filter=".dev">Video</li>
+                                <li class="mr-4 fillter-btn md:mx-4" data-filter=".plugin"> Web Design</li>
+                                <li class="mr-4 fillter-btn md:mx-4" data-filter=".branding"> Logo</li>
+                                <li class="mr-4 fillter-btn md:mx-4" data-filter=".custom">Graphic Design</li>
                             </ul>
                         </div>
                         <!-- End py-12 -->
 
-                        <div id="isotop-gallery-wrapper" class="mymix portfolio_list-two  two-col ">
+                        <div id="isotop-gallery-wrapper" class="mymix portfolio_list-two two-col ">
                             <div class="grid-sizer"></div>
                             <!-- portfolio items one start -->
                             <div class="portfolio_list-two-items isotop-item plugin custom ">
@@ -127,7 +124,7 @@
                                     class="rounded-lg bg-[#fff0f0] p-6 dark:bg-transparent dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloOne" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -147,16 +144,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         UI/UX Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -165,12 +162,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -206,7 +203,7 @@
                                     class="rounded-lg bg-[#fff3fc] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloTwo" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -226,16 +223,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         Logo Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -243,12 +240,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -284,7 +281,7 @@
                                     class="rounded-lg bg-[#fff3fc] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloThree" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -306,16 +303,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         T-Shirt Design Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -323,12 +320,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -365,7 +362,7 @@
                                     class="rounded-lg p-6 bg-[#e9faff] dark:bg-transparent dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloFour" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -386,16 +383,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         Packaging Box Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -404,12 +401,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -445,7 +442,7 @@
                                     class="rounded-lg bg-[#fffae9] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloFive" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -465,16 +462,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         Aura Dione Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -482,12 +479,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -523,7 +520,7 @@
                                     class="rounded-lg bg-[#f4f4ff] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloSix" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -545,17 +542,17 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         Modern Bag Design Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
 
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -565,12 +562,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -606,7 +603,7 @@
                                     class="rounded-lg bg-[#f4f4ff] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloSeven" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -626,16 +623,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         UI/UX Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -643,12 +640,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -684,7 +681,7 @@
                                     class="rounded-lg bg-[#f4f4ff] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloEight" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -704,16 +701,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         UI/UX Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -721,12 +718,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -763,7 +760,7 @@
                                     class="rounded-lg bg-[#fff0f8] dark:bg-transparent p-6 dark:border-[2px] border-[#212425]">
                                     <div class="overflow-hidden rounded-lg">
                                         <a href="#portfiloNine" rel="modal:open">
-                                            <img class="w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110 rounded-lg h-auto"
+                                            <img class="w-full h-auto transition duration-200 ease-in-out transform rounded-lg cursor-pointer hover:scale-110"
                                                 src="" alt="portfolio image" />
                                         </a>
                                     </div>
@@ -783,16 +780,16 @@
                                     <h2 class="text-[#ef4060] dark:hover:text-[#FA5252] text-4xl text-center font-bold">
                                         Aura Dione Project
                                     </h2>
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 my-6 pr-3">
+                                    <div class="grid grid-cols-1 pr-3 my-6 lg:grid-cols-2">
                                         <div class="space-y-2">
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-regular fa-file-lines sm:text-lg hidden sm:block mr-4 md:text-xl"></i>
+                                                    class="hidden mr-4 fa-regular fa-file-lines sm:text-lg sm:block md:text-xl"></i>
                                                 Project :&nbsp;
                                                 <span class="font-medium"> Website</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
-                                                <i class="fa-solid fa-code text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-solid fa-code sm:block"></i>
                                                 Langages :&nbsp;
                                                 <span class="font-medium">Photoshop, Figma</span>
                                             </p>
@@ -801,12 +798,12 @@
                                         <div class="space-y-2">
                                             <p
                                                 class="dark:text-white flex items-center mt-2 lg:mt-0 text-[15px] sm:text-lg">
-                                                <i class="fa-regular fa-user text-lg mr-2 hidden sm:block"></i>
+                                                <i class="hidden mr-2 text-lg fa-regular fa-user sm:block"></i>
                                                 Client :&nbsp; <span class="font-medium">Envato</span>
                                             </p>
                                             <p class="dark:text-white flex items-center text-[15px] sm:text-lg">
                                                 <i
-                                                    class="fa-solid fa-arrow-up-right-from-square text-lg mr-2 hidden sm:block"></i>
+                                                    class="hidden mr-2 text-lg fa-solid fa-arrow-up-right-from-square sm:block"></i>
                                                 Preview :&nbsp;
                                                 <span
                                                     class="font-medium transition-all duration-300 ease-in-out hover:text-[#ef4060]">
@@ -839,7 +836,7 @@
                     </div>
 
                     <footer class="overflow-hidden rounded-b-2xl bg-[#f8fbfb] dark:bg-[#212425]">
-                        <p class="text-center py-6 text-gray-lite dark:text-color-910"> © 2022 All Rights Reserved by <a
+                        <p class="py-6 text-center text-gray-lite dark:text-color-910"> © 2022 All Rights Reserved by <a
                                 class="hover:text-[#FA5252] duration-300 transition"
                                 href="https://themeforest.net/user/ib-themes" target="_blank"
                                 rel="noopener noreferrer">ib-themes</a>.
