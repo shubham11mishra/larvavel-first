@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TwitterController;
 use App\Models\media;
 use App\Models\post;
 use App\Models\postcategory;
@@ -30,6 +32,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
 
@@ -42,9 +48,7 @@ Route::get('/secondlayout', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -99,5 +103,12 @@ Route::post('/media', function () {
         'preview_url' => url("storage/{$dir}/{$media->file_name}")
     ];
 })->name('media.store');
+
+
+// crisp
+Route::resource('chirps', ChirpController::class)->only(['index', 'store', 'update', 'destroy'])->middleware(['auth', 'verified']);
+
+Route::resource('twitter', TwitterController::class)->only(['index']);
+
 
 require __DIR__ . '/auth.php';

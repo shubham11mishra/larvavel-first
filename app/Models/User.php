@@ -47,4 +47,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(post::class);
     }
+
+    public function chirps(): HasMany
+    {
+        return $this->hasMany(Chirp::class);
+    }
+
+
 }
